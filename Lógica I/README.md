@@ -107,3 +107,8 @@ E não
     button.onclick = tchau;
 
 #  ------------------------------------------------------------ #
+
+# Ao longo do curso, aprendemos a lidar com tipos diferentes como, texto, número e booleano (ex.: 'true' ou 'false'). Exemplos desses tipos são:
+var nome = "Regina"; // texto, ou tecnicamente falando, uma string
+var idade = 22; // número
+var temCarteira = true; // booleano
