@@ -1,0 +1,43 @@
+<canvas width="600" height="400"></canvas>
+Escolha uma cor <input type="color">
+
+<script>
+    var paleta = document.querySelector("input")
+    var tela = document.querySelector("canvas");
+    var pincel = tela.getContext("2d");
+    
+
+    pincel.fillStyle = "grey";
+    pincel.fillRect(0, 0, 600, 400);
+
+    var circulo = false;
+    
+    tela.onmousemove = function(evento) {
+
+        if (circulo) {
+            var x = evento.pageX - tela.offsetLeft;
+            var y = evento.pageY - tela.offsetTop;
+            
+            pincel.fillStyle = paleta.value; // Pego o valor no mundo HTML, chamando a var e add (value);
+            pincel.beginPath();
+            pincel.arc(x, y, 10, 0, 2 * 3.14);
+            pincel.fill();
+
+        }
+
+        console.log(x + "," + y);
+
+    }
+    // Função que ao click do mouse desenha na tela.
+    tela.onmousedown = function () {
+        
+        circulo = true;
+
+    }
+     // Função que ao soltar o click do mouse para de desenhar.
+    tela.onmouseup = function () {
+        
+        circulo = false;
+
+    }
+</script>
